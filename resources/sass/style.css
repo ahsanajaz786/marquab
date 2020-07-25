@@ -1,0 +1,39 @@
+
+.addLessonPopup,.deletePopup{
+    max-width: 400px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
+.addLessonPopup .fa-times{
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}
+.addLessonPopup .tab-content{
+    padding: 10px 0px;
+}
+.addLessonPopup .nav-link{
+    border: none;
+}
+.addLessonPopup .nav-link.active, .addLessonPopup .nav-link:hover,.addLessonPopup .nav-link:focus{
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+}
+.fc-event .fc-content{
+    padding: 5px;
+}
+.fc-left{
+    display: flex;
+    align-items: center;
+}
+.fc-left h2{
+    display: inline-block;
+}
+.fc-toolbar{
+    font-size: 12px;
+}

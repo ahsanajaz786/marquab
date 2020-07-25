@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58.835" height="58.836" viewBox="0 0 58.835 58.836">
+  <g id="_007-calendar" data-name="007-calendar" transform="translate(0)">
+    <path id="Path_94" data-name="Path 94" d="M6.306,39.363H65.141v41.98H6.306Z" transform="translate(-6.306 -22.507)" fill="#dfeef4"/>
+    <path id="Path_95" data-name="Path 95" d="M6.306,15.838H65.141v12H6.306Z" transform="translate(-6.306 -10.978)" fill="#f45858"/>
+    <path id="Path_96" data-name="Path 96" d="M60.269,6.306h3.8v9.72h-3.8Z" transform="translate(-32.754 -6.306)" fill="#6d7a84"/>
+    <path id="Path_97" data-name="Path 97" d="M90.052,6.306h3.8v9.72h-3.8Z" transform="translate(-47.351 -6.306)" fill="#6d7a84"/>
+    <path id="Path_98" data-name="Path 98" d="M30.486,6.306h3.8v9.72h-3.8Z" transform="translate(-18.157 -6.306)" fill="#6d7a84"/>
+    <g id="Group_4672" data-name="Group 4672" transform="translate(7.685 22.669)">
+      <ellipse id="Ellipse_3943" data-name="Ellipse 3943" cx="3.204" cy="3.204" rx="3.204" ry="3.204" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3944" data-name="Ellipse 3944" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(12.353)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3945" data-name="Ellipse 3945" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(24.705)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3946" data-name="Ellipse 3946" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(37.058)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3947" data-name="Ellipse 3947" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(0 11.972)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3948" data-name="Ellipse 3948" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(12.353 11.972)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3949" data-name="Ellipse 3949" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(24.705 11.972)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3950" data-name="Ellipse 3950" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(37.058 11.972)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3951" data-name="Ellipse 3951" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(0 23.945)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3952" data-name="Ellipse 3952" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(12.353 23.945)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3953" data-name="Ellipse 3953" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(24.705 23.945)" fill="#3ea2e5"/>
+      <ellipse id="Ellipse_3954" data-name="Ellipse 3954" cx="3.204" cy="3.204" rx="3.204" ry="3.204" transform="translate(37.058 23.945)" fill="#3ea2e5"/>
+    </g>
+  </g>
+</svg>

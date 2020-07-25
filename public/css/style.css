@@ -1,0 +1,325 @@
+body {
+    font-family: sans-serif !important;
+}
+
+.faculty-message {
+    margin-left: 8% !important;
+}
+
+p {
+    font-family: sans-serif !important;
+}
+
+.faculty-title h3 {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    color: #3A3F45 !important;
+}
+
+.faculty-title span {
+    font-size: 2rem !important;
+    color: #3A3F45 !important;
+    font-weight: 200;
+}
+
+.teach-row {
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.btn-login {
+    margin-top: 1.5rem !important;
+    height: 60px !important;
+    font-weight: normal !important;
+    background-color: #41BBAC;
+    font-size: 1rem !important;
+    border-radius: 0px !important;
+}
+
+.teach-us {
+    background-color: #F9F9F9 !important;
+}
+
+.custom-row {
+    padding: 3.75rem !important;
+}
+
+.teach-us .title {
+    font-size: 1.75rem !important;
+}
+
+.banner {
+    margin-top: 4rem !important;
+}
+
+.btn-google {
+    height: 60px !important;
+    font-weight: normal !important;
+    background-color: #4285F4 !important;
+    font-size: 1rem !important;
+    border-radius: 0px !important;
+}
+
+.login-group {
+    padding-bottom: 0.7rem !important;
+    margin: 0 auto !important;
+    border: 1px solid #F5F5F5 !important;
+}
+
+.login-group label {
+    font-size: 16px !important;
+    color: #222E3D !important;
+}
+
+.login-grou input {
+    color: #BCBCBC !important;
+}
+
+.line {
+    padding: 1rem !important;
+    padding-top: 1.5rem !important;
+}
+
+.login {
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+
+.btn-fb {
+    height: 60px !important;
+    font-weight: normal !important;
+    font-size: 1rem !important;
+    border-radius: 0px !important;
+    background-color: #3b5998 !important;
+}
+
+.faculty-message .col-md-4 .contant {
+    width: 80% !important;
+    margin: 0 auto !important;
+}
+
+.accordion-desc {
+    font-size: 0.9rem !important;
+    color: #959595!important;
+}
+
+.fa-angle-down {
+    color: #A7AAAF !important;
+}
+
+.accordion-custom .card {
+    margin: 0 auto;
+    width: 80%;
+    background: white !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid !important;
+    margin-bottom: 19px;
+}
+
+.accordion-custom .card .card-header {
+    background: white !important;
+    border-radius: 0 !important;
+    font-size: 1.1rem !important;
+    border: 0 !important;
+}
+
+.accordion-heading {
+    color: #686868!important;
+    font-size: 1.1rem !important;
+}
+
+.frequently-q h1 {
+    margin-left: 8%;
+    margin-top: 5%;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: white !important;
+    font-weight: bold !important;
+    color: #3A3F45 !important;
+    border-bottom: 4px solid #41BBAC !important;
+}
+
+.questions a {
+    font-size: 1rem !important;
+    color: #959595 !important;
+}
+
+.contant .row {
+    margin-top: 9%;
+    ;
+}
+
+.faculty-message .col-md-4 .contant h5 {
+    color: #686868;
+    margin-top: 5%;
+    font-size: 1.0rem !important;
+}
+
+.faculty-message .col-md-4 .contant h3 {
+    color: #3A3F45;
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 1rem !important;
+}
+
+.faculty-message .col-md-4 .contant p {
+    color: #686868;
+    font-size: 0.9rem !important;
+}
+
+.center {
+    flex-direction: column;
+    margin-left: 8%;
+    align-items: center;
+}
+
+.tab-custom {
+    font-size: 20px;
+    border: 0;
+}
+
+.nav-tabs .nav-link {
+    border: 0 !important;
+    ;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 0 !important;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: white !important;
+    border-color: white;
+    border-bottom: 4px solid #41BBAC !important
+}
+
+.accordion-custom .card {
+    background: white !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+}
+
+.join-banner {
+    margin-top: 5%;
+    background-color: #41BBAC!important;
+}
+
+.footer {
+    margin: 0;
+    background-color: #F8F8F8;
+}
+
+.join-banner span {
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 50% !important;
+    color: #FFFFFF;
+}
+
+.footer {
+    background: #F8F8F8 !important;
+}
+
+.footer .desc {
+    color: #959595;
+    font-size: 0.9rem;
+}
+
+.list {
+    padding-top: 2px;
+}
+
+.list-group-item {
+    margin-top: 7% !important;
+    background: #F8F8F8 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    color: #959595 !important;
+}
+
+.footer-copy {
+    background-color: #A4A4A4;
+}
+
+.footer-copy .row {
+    padding: 3%;
+    padding-left: -3%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-copy .row p {
+    font-size: 1rem;
+    color: #3A3F45;
+}
+
+.list-group-item a {
+    color: #959595 !important;
+    font-size: 0.9rem;
+}
+
+.list-title {
+    margin-bottom: 3%;
+    color: #283544;
+    font-size: 1.1rem;
+}
+
+.footer-row {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.footer .title {
+    top: 4rem;
+    color: #41BBAC;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.faculty-title {
+    width: 84%;
+    margin: 0 auto;
+}
+
+.social-link .img {
+    margin-left: 8% !important;
+    ;
+    margin-top: 8% !important;
+}
+
+.join-banner p {
+    line-height: 40px;
+    ;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.accordion-custom .card-header {
+    background: white !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.btn-join {
+    background-color: #FF8D53 !important;
+    width: 16%;
+    height: 50px;
+    font-size: 1.1rem;
+}
