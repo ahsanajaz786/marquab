@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Artisan;
 
 
 Route::get('test',function (){
-    dd(route('notifications.lesson-schedule.post'));
+    //dd(route('notifications.lesson-schedule.post'));
     return view('test');
 });
 
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'],function (){
     Route::resource('calendar','CalendarController');
     Route::post('/updateSchedule','CalendarController@update');
     Route::post('/cancelSchedule','CalendarController@cancelSchedule');
-    
+
 
     Route::get('/profile', 'SettingController@profile')->name('profile.index');
     Route::get('/settings', 'SettingController@settings')->name('settings.index');
