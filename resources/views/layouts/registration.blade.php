@@ -11,13 +11,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-
     <!-- Scripts -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/reg_style.css')}}">
-
 
 
     <style>
@@ -28,42 +29,52 @@
 </head>
 
 <body class="about-page">
-    <!-- Left Panel -->
-
-    <div class="registration-sidebr">
-        <div class="content">
-            <ul class="list-group step">
-                <li class="list-group-item">
-                    <div class="rounded-circle number icon">1</div><a href="#about-section">About</a>
-                </li>
-                <li class="list-group-item">
-                    <div class="rounded-circle number icon">2</div><a href="#description-section">Description</a>
-                </li>
-                <li class="list-group-item">
-                    <div class="rounded-circle number icon">3</div><a href="#availability-section">Availability</a>
-                </li>
-                <li class="list-group-item">
-                    <div class="rounded-circle number icon">4</div><a href="#photo-section">Photo/Video</a>
-                </li>
-                <li class="list-group-item">
-                    <div class="rounded-circle number icon">5</div><a href="#verification-section">Verification</a>
-                </li>
-            </ul>
+<!-- Left Panel -->
+<div class="row">
+    <div class="col" style="max-width: 30%">
+        <div class="registration-sidebr">
+            <div class="content-wrapper">
+                <div class="content">
+                    <ul class="list-group step">
+                        <li class="list-group-item">
+                            <div class="rounded-circle number icon">1</div>
+                            <a href="javascript:void(0)" data-section="about">About</a>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="rounded-circle number icon">2</div>
+                            <a href="javascript:void(0)" data-section="descrption">Description</a>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="rounded-circle number icon">3</div>
+                            <a href="javascript:void(0)" data-section="availability">Availability</a>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="rounded-circle number icon">4</div>
+                            <a href="javascript:void(0)" data-section="Profile-image">Photo/Video</a>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="rounded-circle number icon">5</div>
+                            <a href="javascript:void(0)" data-section="profile-Verification">Verification</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="col">
+        <div class="content-wrapper right-panel">
 
-    <!-- Right panel -->
-
-    <div class="content-wrapper right-panel">
-
-        <div class="col-md-11">
             @yield('content')
 
         </div>
+
     </div>
-    
-    
-    @yield('script')
+</div>
+
+<!-- Right panel -->
+
+
+@yield('script')
 </body>
 
 </html>
