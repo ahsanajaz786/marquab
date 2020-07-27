@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Pusher\Laravel\PusherServiceProvider::class,
         Nahid\Talk\TalkServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -229,7 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Chat' => Musonza\Chat\Facades\ChatFacade::class,
         'Talk'  =>  Nahid\Talk\Facades\Talk::class,
-        'Pusher' => Pusher\Laravel\Facades\Pusher::class
+        'Pusher' => Pusher\Laravel\Facades\Pusher::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

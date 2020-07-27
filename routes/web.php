@@ -12,6 +12,16 @@ Route::get('test',function (){
     dd(route('notifications.lesson-schedule.post'));
     return view('test');
 });
+Route::get('google', function () {
+    return view('googleAuth');
+});
+    
+Route::get('google/login', 'Auth\LoginController@redirectToGoogle');
+Route::get('google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('facebook/callback', 'Auth\LoginController@handleFaceBookCallback');
+
+Route::get('facebook/login', 'Auth\LoginController@redirectToFaceBook');
+
 
 
 Route::get('/', function () {
