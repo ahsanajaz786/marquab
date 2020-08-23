@@ -3,6 +3,7 @@
 
     <link rel="stylesheet" href="{{asset('chat/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('chat/css/style.css')}}">
+
 @endsection
 @section('content')
 
@@ -10,30 +11,27 @@
         @include('partials.peoplelist')
         <div class="chat">
             <div class="chat-header clearfix">
-                @if(isset($user))
-                    <img src="{{@$user->avatar}}" alt="avatar" />
-                @endif
+               
                 <div class="chat-about">
                     @if(isset($user))
-                        <div class="chat-with">{{'Chat with ' . @$user->name}}</div>
+                        <div class="chat-with">{{ @$user->name}}</div>
                     @else
                         <div class="chat-with">No Thread Selected</div>
                     @endif
                 </div>
-                <i class="fa fa-star"></i>
+               
             </div> <!-- end chat-header -->
-
+          
             <div class="chat-history">
                 <ul id="talkMessages">
 
                     @foreach($messages as $message)
                         @if($message->sender->id == auth()->user()->id)
-                            <li class="clearfix" id="message-{{$message->id}}">
-                                <div class="message-data align-right">
+                            <li class="clearfix" id="message-{{$message->id}}" >
+                                <div class="message-data align-right" >
                                     <span class="message-data-time" >{{$message->humans_time}} ago</span> &nbsp; &nbsp;
-                                    <span class="message-data-name" >{{$message->sender->name}}</span>
                                 </div>
-                                <div class="message other-message float-right">
+                                <div class="message other-message float-right" style="background:#ddd">
                                     {{$message->message}}
                                 </div>
                             </li>
@@ -59,14 +57,19 @@
             <div class="chat-message clearfix">
                 <form action="" method="post" id="talkSendMessage">
                     <textarea name="message-data" id="message-data" placeholder ="Type your message" rows="3"></textarea>
-                    <input type="hidden" name="_id" id="id" value="{{@request()->route('id')}}">
-                    <button type="submit">Send</button>
+                   
+                  
+                   <input type="hidden" name="_id" id="id" value="{{@request()->route('id')}}">
+                    
                 </form>
 
             </div> <!-- end chat-message -->
 
         </div>
+        
     </div>
+    </div>
+    
 
 @endsection
 

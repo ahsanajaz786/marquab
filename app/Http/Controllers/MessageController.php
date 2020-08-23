@@ -20,6 +20,9 @@ class MessageController extends Controller
         });
         View::composer('partials.peoplelist', function ($view) {
             $threads = Talk::threads();
+            // dd( $threads);
+            
+
             $view->with(compact('threads'));
         });
     }
@@ -33,9 +36,11 @@ class MessageController extends Controller
         $conversations = Talk::getMessagesByUserId($id, 0, 50);
         $user = '';
         $messages = [];
+        
         if (!$conversations) {
             $user = User::find($id);
         } else {
+            $u= $conversations->withUser;
             $user = $conversations->withUser;
             $messages = $conversations->messages;
         }
@@ -43,6 +48,8 @@ class MessageController extends Controller
         if (count($messages) > 0) {
             $messages = $messages->sortBy('id');
         }
+       
+
 
         return view('messages.conversations', compact('messages', 'user'));
     }

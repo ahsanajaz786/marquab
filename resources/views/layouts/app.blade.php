@@ -12,11 +12,15 @@
      
 
     <!-- Scripts -->
+    
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dashbord.css')}}">
     
 
     <style>
+     
+
         .navbar{
             margin-bottom: 0px;
         }
@@ -26,6 +30,7 @@
         .navbar .navbar-nav li > a .badge{
             margin: 6px;
         }
+        
     </style>
     @yield('head')
 
@@ -38,7 +43,8 @@
        
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <img class="image-icon" src="{{asset('images/logo.png')}}" />
+                            
                 </a>
                 
               
@@ -79,12 +85,12 @@
                       
                       <li>
                         <h5 style="color: #c8c9ce !important;font-size: 12px;margin-top: 9px;">
-                        <i class="fa fa-circle" style="color:#94bf16;font-size:12px"></i> First lesson</h5>
+                        <i class="fa fa fa-check-circle" style="color:#94bf16;font-size:12px"></i> First lesson</h5>
                       
                       </li>
                       <li>
                       <h5 style="color: #c8c9ce !important;font-size: 12px;margin-top:9px">  
-                       <i class="fa fa-circle" style="color:#3bb3bd;font-size:12px"></i> Regular lesson</h5>
+                       <i class="fa fa fa-check-circle" style="color:#3bb3bd;font-size:12px"></i> Regular lesson</h5>
                       
                       </li>
                       <li>
@@ -179,18 +185,19 @@
     <!-- Left Panel -->
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-        <div class="row" style="margin: 0px;">
-            <div class="col-md-1 bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                           </button>
+        <div class="row header" style="margin: 0px;">
+            <div class="col-md-4 header-link">
+                <a href="">Dashboard</a>
+                <a href="">Find Tutors</a>
+                <a href="">Help</a>
+            
 
             </div>
 
       
     
-    <div class="col-md-11" style="padding: 0px;">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <div class="col-md-8" style="padding: 0px;">
+        <nav class="navbar navbar-expand-md   shadow-sm   right">
        
                         
                      
@@ -214,14 +221,12 @@
                         @if(Auth::check())
 
                             <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span>{{ __('Credit: ') }}{{auth()->user()->credits->credit}}$</span></a>
-                            </li>
+                            <i class="fa fa-google-wallet" aria-hidden="true"></i>
+                           </li>
                             {{-- Notifications --}}
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('notifications.index')}}">
-                                    <span class="badge badge-danger" id="noti">{{auth()->user()->unreadNotifications->count()}}</span>
                                     <span class="fa fa-bell"></span>
                                 </a>
                             </li>
@@ -229,7 +234,6 @@
                             {{--<li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{route('notifications.index')}}"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span class="badge badge-danger" id="noti">{{auth()->user()->unreadNotifications->count()}}</span>
                                     <span class="fa fa-bell"></span>
                                 </a>
                             </li>--}}

@@ -1,0 +1,65 @@
+public function dwdwd(Request $request){
+        return $request;
+
+        $request->validate([
+           
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string',
+            'language_spoken' => 'required|array|min:1',
+            'language_spoken_lavel' => 'required|array|min:1',
+            'subject_taught' => 'required|array|min:1',
+            'hourly_rate' => 'required|string',
+            'time_zone' => 'required|string',
+            'profile_photo' => 'required|image',
+            'headline' => 'required|string',
+            'about' => 'required|string'
+        ]);
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'time_zone' => $request->time_zone,
+            'role' => 'Teacher',
+        ]);
+
+        try {
+
+            $profilePhotoName = $request->file('profile_photo')->getClientOriginalName();
+            $recordedVideo = '';
+            if($request->exists('recorded_video'))
+                $recordedVideo = 'recorded-video.webm';
+            $langLevels = [];
+            for ($i = 0; $i < count($request->language_spoken); $i++){
+                $langLevels[] = $request->language_spoken_lavel[$i];
+            }
+            $tutor = TutorInfo::create([
+                'language_spoken' => json_encode($request->language_spoken),
+                'language_spoken_lavel' => json_encode($langLevels),
+                'subject_taught' =>json_encode($request->subject_taught),
+                'country' => $request->country,
+                'hourly_rate' => $request->hourly_rate,
+                'profile_photo' => $profilePhotoName,
+                'headline' => $request->headline,
+                'about' => $request->about,
+                'recorded_video' => $recordedVideo,
+                'youtube_url' => $request->youtube_url,
+                'user_id' => $user->id
+            ]);
+
+            Credit::create([
+                'user_id' => $user->id,
+                'credit'  => 0
+            ]);
+
+            $request->file('profile_photo')->storeAs($user->id, $profilePhotoName, 'users');
+            if($request->exists('recorded_video')){
+                $request->file('recorded_video')->storeAs($user->id, 'recorded-video.webm', 'users');
+            }
+        }catch (\Exception $exception){
+            User::find($user->id)->delete();
+            return response(['error' => $exception],500);
+        }
+
+        dd($request->all());
+    }

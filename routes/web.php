@@ -32,13 +32,24 @@ Route::get('/about', function () {
 });
 Auth::routes();
 
+Route::post('/registerTeacher','tutor\RegisterController@registerPost')->name('post');
+
+
 Route::group(['middleware' => 'teacher', 'as' => 'tutor.'],function (){
+    
+Route::get('/profileTutor','tutor\RegisterController@register')->name('register');
+Route::get('/getUserDescrtion','tutor\RegisterController@getUserDescrtion')->name('getUserDescrtion');
+Route::get('/loadPersonalInfo','tutor\RegisterController@loadPersonalInfo')->name('loadPersonalInfo');
+Route::post('/updateUserDescrtion','tutor\RegisterController@updateUserDescrtion')->name('updateUserDescrtion');
+Route::post('/updatePersonalInfo','tutor\RegisterController@updatePersonalInfo')->name('updatePersonalInfo');
+Route::post('/updateTimeZone','tutor\RegisterController@updateTimeZone')->name('updateTimeZone');
+Route::post('/Uploads','tutor\RegisterController@Uploads')->name('updateTimeZone');
+
     /* Registration */
 
     Route::group(["namespace"=>'Tutor', "prefix"=>"tutor"],function(){
-        Route::get('/register','RegisterController@register')->name('register');
-        Route::post('/register','RegisterController@registerPost')->name('post');
-    });
+        Route::get('/ab','RegisterController@register')->name('register');
+       });
 
     /* Registration end */
 

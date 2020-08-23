@@ -36,7 +36,6 @@ class ChatController extends Controller
             ->isDirect()
             ->get();
         $conversations = [];
-        dd($participants->items());
         foreach ($participants->items() as $request){
             $conversations[] = $request->conversation;
         }
@@ -53,6 +52,7 @@ class ChatController extends Controller
         if(!$conversation){
             Chat::createConversation([$user, $user2])->makeDirect();
         }
+        return  $conversation;
         $userInfo = $user->role == 'Student'?$user->studentInfo : $user->tutorInfo;
         $profilePic = url('images').($userInfo->profile_photo? '/users/'.$user->id.'/'.$userInfo->profile_photo: '/avatar.png');
         return view('chat', compact('user','userInfo', 'profilePic'));

@@ -33,11 +33,11 @@
                     </div>
 
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" >
                         @csrf
                         <div class="row col form-group login-group">
                             <label for="email">{{ __('Email Address') }}</label>
-                            <input id="email" placeholder="@xyz" type="email" class="form-control input-login @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" placeholder="@xyz" id="email" type="email" class="form-control input-login  " name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                         </div>
 
@@ -45,7 +45,7 @@
 
                         <div class="row col form-group mt-4  login-group">
                             <label for="password">{{ __('Password') }}</label>
-                            <input id="password" placeholder="**********" type="password" class="form-control input-login @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" placeholder="**********" id="password" type="password" class="form-control input-login @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
 
                         </div>
@@ -502,5 +502,44 @@
 
     </div>
 </div>
+
+@endsection
+@section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function()
+{
+   $('.btn-login').click(function(){
+       if($('#email').val()=='' || $('#password').val()==''){
+        if($('#email').val()=='')
+        $('#email').addClass('is-invalid')
+        if( $('#password').val()=='')
+        $('#password').addClass('is-invalid')
+        return
+
+
+       }
+        
+    $.ajax({
+                type:'POST',
+                url: '/registerTeacher',
+                data:{
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                    _token: '{{csrf_token()}}'
+                },
+                success:function(data){
+                   
+                    if(data.error)
+                        alert('error: '+data.error)
+                    else
+                        alert('Done! Lesson will be schedule after confirmation')
+                },
+                error: (error) => { console.log('res error', error)}
+            })
+   })
+})
+</script>
 
 @endsection

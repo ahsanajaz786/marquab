@@ -8,6 +8,7 @@ use App\Shedule;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\TutorInfo;
 use Illuminate\Support\Facades\Auth;
 
 use function Symfony\Component\VarDumper\Dumper\esc;
@@ -34,9 +35,10 @@ class CalendarController extends Controller
         $subjects=[];
         if(Auth::user()->role=='Teacher')
         {
-            $subjects = json_decode(Auth::user()->tutorInfo->subject_taught);
+            $subjects = TutorInfo::select('subject_taught')->where('user_id',Auth::user()->id)->get();
 
         }
+        
         
         return view('tutor.calendar', compact('events', 'students', 'subjects'));
     }

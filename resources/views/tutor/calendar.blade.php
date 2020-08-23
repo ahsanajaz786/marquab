@@ -1,5 +1,66 @@
 @extends('layouts.app')
 @section('head')
+<style>      
+    .fc-time-grid .fc-slats td{
+       
+        border-bottom:0px  solid #ddd !important;
+
+    }
+    .fc .fc-axis {
+        border:0 !important;
+        
+    }
+    .fc-time-grid .fc-slats .fc-minor td {
+    border-top-style: solid !important; 
+}
+.fc-time-grid .fc-slats td{
+    height:2.5rem !important;
+}
+.fc-event .fc-content{
+    padding:0 !important
+}
+.fc-button-primary{
+    background: white !important;
+   
+    border-color: #ddd !important;
+    color: #ddd !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.fc-left h2{
+    
+    vertical-align: middle !important;
+    margin-bottom: 0px !important;
+}
+input.search {
+	padding-left:40px;
+	background-repeat: no-repeat;
+    background-position-y: 5px;
+    background-size:30px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADbSURBVDhP5ZI9C4MwEIb7//+BEDgICA6C4OQgBJy6dRIEB6EgCNkEJ4e3iT2oHzH9wHbpAwfyJvfkJDnhYH4kHDVKlSAigSAQoCiBKjVGXvaxFXZnxBQYkSlBICII+22K4jM63rbHSthCSdsskVX9Y6KxR5XJSSpVy6GbpbBKp6aw0BzM0ShCe1iKihMXC6EuQtMQwukzPFu3fFd4+C+/cimUNxy6WQkNnmdzL3NYPfDmLVuhZf2wZYz80qDkKX1St3CXAfVMqq4cz3hTaGEpmctxDPmB0M/fCYEbAwZYyVKYcroAAAAASUVORK5CYII=);
+}
+.btns{
+    height:40px!important;
+    font-size:12px;
+    font-weight:normal;
+}
+.btn-light{
+    border:1px solid #41BBAC !important;
+    background:white  !important;
+
+    color:#41BBAC !important;
+    margin:0 !important;
+    padding:5px;
+}
+.btn-light:hover{
+    border:1px solid #41BBAC !important;
+    background:white  !important;
+
+    color:#41BBAC !important;
+    margin:0 !important;
+    padding:5px;
+}
+</style>
 
 <link rel="stylesheet" href="{{asset('css/fullcalendar.css')}}" />
 
@@ -14,7 +75,7 @@
         calendar = new Calendar(calendarEl, {
             plugins: [dayGridPlugin, momentPlugin, timeGridPlugin, interactionPlugin],
             header: {
-                left: 'prev,next title',
+                left: 'prev,title,next ',
                 center: '',
                 right: ''
             },
@@ -23,9 +84,10 @@
             selectMirror: true,
             timeFormat: 'H:mm',
             defaultView: 'timeGridWeek',
-            columnHeaderFormat: 'ddd D',
+            columnHeaderFormat: 'dddd',
             height: 'auto',
             slotLabelFormat: [
+
                 'D d',
                 'H:mm'
             ],
@@ -140,28 +202,41 @@
                 } else if (event.extendedProps.type) {
 
                     $(el).find('.fc-content').first().attr('title', 'Status: ' + event.extendedProps.status)
-
+                    var color='';
                     let studentName = ''
                     if (event.extendedProps.status)
                         var v = ''
 
                     if (event.extendedProps.status == 'Not Confirmed') {
-                        v = '<i class="fa fa-check-circle " style="color:#ccc"></i>'
+                        color='#EEF7FF'
+                        console.log('q')
+                        v = '<i class="fa fa-check-circle " style="color:#ccc;font-size:15px;"></i>'
 
                     } else if (event.extendedProps.status == 'cancel') {
-                        v = '<i class="fa fa-ban" aria-hidden="true"></i>'
+                        color='#EEF7FF'
+                        console.log('p')
+                        v = '<i class="fa fa-ban" aria-hidden="true" style="color:#ccc;font-size:15px;"></i>'
 
                     } else {
-                        v = '<i class="fa fa-check-circle " ></i>'
+                        color='#EEF7FF'
+                        console.log('12')
+                        v = '<i class="fa fa-check-circle  " style="color:#ccc;font-size:15px;" ></i>'
 
                     }
 
-
+                  $(el)[0].style.setProperty('background', color, 'important');
+                  $(el)[0].style.setProperty('border-color', '#2198FF', 'important');
+                 
+                    console.log("", $(el))
                     studentName = `<span>${event.extendedProps.student_name}</span><br>`
                     $(el).find('.fc-content').first().html(`
-                            <span>${moment(event.start).format('H:mm')} - ${moment(event.end).format('H:mm')}</span><br>
-                            ${studentName}
-                            <div class="status"><b>Status: </b>${v}</div>
+                          <div><div style='height:10px;background:rgba(33 ,152 ,255,0.5);'></div> 
+                          <div style='padding-top:5px;;padding-left:10px'>
+                          <div class="status">${v}  ${studentName}</div></div>
+                           <span style='padding:5px;padding-left:25px'>${moment(event.start).format('H:mm')} - ${moment(event.end).format('H:mm')}</span><br>
+                           
+                          
+                            </div>
                         `)
                 }
             }
@@ -302,14 +377,27 @@
 @endsection
 
 @section('content')
+<div class="row">
+    <div class="col-md-4">
+    <input class="search form-control">
+    </div>
+    <div class="col-md-4">
+   
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-primary btns btn-light"> Set Up Availability</button>
+        <button class="btn btn-primary btns"> <i class="fa fa-plus"></i> Schedule New LessonSet </button>
+    </div>
+</div>
 
+<div id='calendar' class="mt-2"></div>
 <div class="deletePopup">
 
 
     <form action="" method="post" id="saveReschedule">
         <div class="form-group">
             <div class="row">
-                <span></span>
+                
 
                 <div class='col-md-12'>
 
@@ -361,7 +449,6 @@
             <div class="form-group">
                 <label for="students">Select Student</label>
                 <select name="student" id="students" class="custom-select">
-                    <option disabled selected value="">Students</option>
                     @foreach($students as $key => $row)
                     @if($key)
                     <option value="{{$row[0]->student_id}}">{{$row[0]->student->name?? ''}}</option>
@@ -372,9 +459,8 @@
             <div class="form-group">
                 <label for="lessons">Select Lesson</label>
                 <select name="lesson" id="lessons" class="custom-select">
-                    <option disabled selected value="">Lessons</option>
                     @foreach($subjects as $lesson)
-                    <option value="{{$lesson}}">{{$lesson}}</option>
+                    <option value="{{$lesson}}">{{$lesson->subject_taught}}</option>
                     @endforeach
                 </select>
             </div>
@@ -396,12 +482,13 @@
             </div>
         </div>
     </div>
-</div>
-<div id='calendar'></div>
+</div
 @endsection
 @section('footer')
 <script>
     $(document).ready(function() {
+    
+        
         $('#saveReschedule').submit(function(e) {
             var date = $('#date').val()
             var sTime = $('#startime').val()
